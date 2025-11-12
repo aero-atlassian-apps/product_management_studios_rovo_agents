@@ -6,6 +6,7 @@ Activer lorsque l’utilisateur demande une évaluation ou un score pour une Epi
 ## Starters de conversation (2 lignes utiles)
 - « Évaluer l’Epic `[issue.key]` et donner un score synthétique »
 - « Score par dimension (contexte/objectif/critères) pour `[issue.key]` »
+ - « Avis rapide non‑noté pour `[issue.key]` (diagnostic express) »
 
 ### Exemples positifs
 - « Évalue cet Epic et donne‑moi un score »
@@ -18,14 +19,15 @@ Activer lorsque l’utilisateur demande une évaluation ou un score pour une Epi
 ### Exemples négatifs
 - « Aide‑moi à créer une Epic » → Créer une Epic de qualité
 - « Reformule mon Epic » → Améliorer une Epic existante
-- « Donne 3 points rapides » → Donner un feedback rapide
 
 ## Frontières et anti‑chevauchement
 - Responsabilité unique: évaluer/score et diagnostiquer la qualité d’une Epic.
 - Ne pas modifier l’Epic; publication en commentaire sur consentement.
 - Hors portée: reformulation complète ou création.
 
+Consolidation
+- La vérification de conformité est incluse.
+- Le mode « Feedback rapide » est disponible sous « Avis rapide » (non‑noté).
+
 ## Handoffs (redirections)
 - Actions d’amélioration → Améliorer une Epic existante.
-- Vérification contre le guide → Vérifier conformité standards.
-- Avis express non‑noté → Donner un feedback rapide.

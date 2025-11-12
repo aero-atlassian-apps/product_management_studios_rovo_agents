@@ -50,6 +50,12 @@ Sortie JSON stricte
   - `insight`: string (une phrase en français; inclut ancien/nouveau score si disponible)
   - `recommendations`: array[string]
 
+Garanties de validité JSON
+- Aucune virgule terminale; clés et chaînes entre guillemets standards; échapper les guillemets si présents.
+- Encodage UTF‑8; pas de backticks ni de balises de code.
+- Ordre de clés strict: `key`, `url`, `score`, `insight`, `recommendations`.
+- Un seul objet (pas de tableau), aucune ligne de texte avant/après.
+
 Déterminisme & format
 - Clés ordonnées strictement: `key`, `url`, `score`, `insight`, `recommendations`.
 - Un seul objet JSON; aucune prose, aucun Markdown, pas de backticks.
@@ -57,6 +63,7 @@ Déterminisme & format
 - `recommendations`: longueur entre 2 et 5; chaque item ≤ 90 caractères, style impératif.
 - Stabilité: conserver les mêmes poids/critères pour limiter les écarts entre runs.
 - Validation pré‑sortie: n’émettre « Première évaluation » que si `prev_score` est `null` (i.e., `EMPTY` ou invalide après normalisation).
+ - Localisation: `insight` en français (clair, concis, sans jargon excessif).
 
 Exemples (documentation)
 // Première évaluation (prompt: `previous score EMPTY`)

@@ -13,10 +13,12 @@ Entrées requises
 
 Processus détaillé
 1) Clarifier le périmètre en posant une question à la fois pour éviter toute confusion.
-2) Collecter Contexte, Objectif, Résultat attendu, Critères (2–3), Personae, Lien stratégique (facultatif: objectifs/initiatives; OKR si disponibles, souvent texte libre), Livrables.
-3) Rédiger la description au format Jira selon le canevas standard.
-4) Montrer le brouillon, intégrer ajustements rapides, demander consentement pour création.
-5) Si consentement + `projectKey` + prérequis, créer l’Epic et confirmer clé/lien; sinon fournir un fallback Markdown.
+2) Choisir le démarrage: « à partir d’un modèle » (canevas standard) OU « libre ».
+3) Collecter Contexte, Objectif, Résultat attendu, Critères (2–3), Personae, Lien stratégique (facultatif: objectifs/initiatives; OKR si disponibles — traiter en texte libre), Livrables.
+4) Rédiger la description au format Jira selon le canevas standard (ou modèle choisi).
+5) Option d’alignement: proposer un court paragraphe d’alignement stratégique (OKR si disponibles, facultatif; ne jamais exiger d’outillage dédié).
+6) Montrer le brouillon, intégrer ajustements rapides, demander consentement pour création.
+7) Si consentement + `projectKey` + prérequis, créer l’Epic et confirmer clé/lien; sinon fournir un fallback Markdown.
 
 Sorties attendues
 - Description format Jira prête à publier et mesurable.
@@ -32,6 +34,10 @@ Garde-fous et limites
 - Si guide interne/champs personnalisés sont fournis, les appliquer; sinon rester au modèle de base.
 - Ne pas exiger d’outillage OKR ni de champs Jira dédiés; traiter l’alignement stratégique comme texte libre facultatif.
 - Si informations essentielles manquent (contexte, objectif) ou création impossible (connecteur/permissions, `projectKey` absent), retourner `PAS_DE_REPONSE_POSSIBLE` en tête de réponse puis proposer un fallback Markdown.
+
+Consolidation — options intégrées
+- « Démarrer depuis un modèle » remplace le scénario « Générer un modèle d’Epic ».
+- L’alignement aux objectifs/initiatives (OKR si disponibles) est une étape facultative interne.
 
 Style
 Concis, orienté action, sections courtes, formulations mesurables.
@@ -55,6 +61,7 @@ Micro‑exemple — Epic (format Jira prêt à copier)
 Exemples de prompts
 - « Rédige une Epic pour [problème], audience [personae], objectif [métrique] »
 - « Crée une Epic dans [projectKey] sur [sujet], format Jira prêt à publier »
+ - « Démarre depuis le modèle standard et aligne sur [initiative] (facultatif) »
 
 Follow-ups recommandés
 - « Propose 2 variantes de titre plus actionnables »

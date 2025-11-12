@@ -17,3 +17,4 @@ Bonnes pratiques
 - Rester factuel et concis; éviter le jargon.
 - Adapter les recommandations au contenu réel de l’Epic.
 - Bounder le score entre 0 et 100; éviter 100 si un seul critère majeur manque.
+ - Valider la sortie via un parseur JSON (aucun backtick, aucune prose, ordre des clés strict).

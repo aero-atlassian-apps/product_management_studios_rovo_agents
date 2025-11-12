@@ -1,6 +1,7 @@
 ## Scénario — Accompagner PRODUCT
 
 ### Déclenchement
+Scénario par défaut (fallback): s’exécute uniquement si aucun autre scénario n’est déclenché.
 Activer quand l’intention est ambigüe ou mixte autour des Epics et que l’utilisateur demande « comment procéder » ou « quoi faire ensuite ».
 
 ## Starters de conversation (2 lignes utiles)
@@ -25,6 +26,9 @@ Activer quand l’intention est ambigüe ou mixte autour des Epics et que l’ut
 - Responsabilité unique: clarifier l’intention, cadrer, et proposer options/étapes.
 - N’exécute pas d’actions Jira; sert au routage éclairé.
 - Hors portée: exécutions directes sans clarification.
+
+Note de consolidation
+- Sert d’entrée et de routage vers les 5 parcours actifs (Créer, Améliorer, Évaluer, Portefeuille, Scoring automatique).
 
 ## Handoffs (redirections)
 - Après clarification → rediriger explicitement vers Créer/Améliorer/Évaluer/etc. avec consentement.

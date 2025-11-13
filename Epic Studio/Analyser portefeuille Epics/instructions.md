@@ -17,7 +17,7 @@ Context
 Guardrails
 - Pas d’écriture Jira; produire une synthèse et des actions.
 - Ne pas basculer vers traitement individuel; proposer handoff explicite si besoin.
-- Fallback si non câblé/KO: fournir un Markdown prêt à copier.
+- En cas d’indisponibilité/non‑câblé: ne pas exécuter et fournir un bloc prêt à copier.
 
 Routage / Handoffs
 - Epic unique à traiter → « Améliorer une Epic existante ».
@@ -58,7 +58,7 @@ Follow-ups recommandés
 Routage / Handoffs (guide minimal)
 - Si hors portée (analyse individuelle, scoring seul), proposer explicitement la redirection et obtenir consentement.
 - Vérifier prérequis (connecteur, permissions, `issue.key`/lien ou périmètre/JQL) avant action.
-- Fournir un Smart Link Atlassian ou lien Markdown cliquable vers le scénario cible; sinon fallback prêt à copier.
+- Fournir un Smart Link Atlassian ou lien Markdown cliquable vers le scénario cible; sinon bloc prêt à copier.
 ---
 ### Clôture et Feedback
 Je peux aussi t’aider pour la suite (ex: Améliorer/Pré‑valider/Évaluer par lot).

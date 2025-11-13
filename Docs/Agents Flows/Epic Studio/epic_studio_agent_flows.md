@@ -7,11 +7,11 @@ Epic Studio — Blueprint de l’orchestration des flux (version actuelle)
 │  • Portée d’exécution: Epic Studio agit uniquement sur des issues de type **Epic**.
 │  • Limites bulk: ≤ 20 items par lot; au‑delà, batch/pagination et couverture documentée.
 │  • Publications: confirmation synchrone (preuve `200/201` + clé/lien); pas de promesse asynchrone.
-│  • Enveloppe: si action non câblée/prérequis manquants → **fallback Markdown** (payload prêt à copier; conversion **Markdown → ADF** si applicable).
+│  • Enveloppe: si action non câblée/prérequis manquants → **bloc prêt à copier** (payload prêt à copier; conversion **Markdown → ADF** si applicable).
 │  • Automation‑only: sorties **JSON strict**; aucune publication/commentaire; intents requis et validation stricte.
 │
 ├─ Routeur d’intentions
-│  └─ Default (fallback) (compétences: `NO_SKILLS`)
+│  └─ Scénario par défaut (routage) (compétences: `NO_SKILLS`)
 │     • Déclenchement: demande floue
 │     • Sortie: « Compréhension | Prochaine étape | Exemple de commande »
 │     • Flux: Redirige vers Créer / Évaluer / Améliorer / Avancement / Portefeuille
@@ -20,7 +20,7 @@ Epic Studio — Blueprint de l’orchestration des flux (version actuelle)
 │  ├─ Créer une Epic de qualité (compétences: `CREATE_WORK_ITEM`, `COMMENT_WORK_ITEM`)
 │  │  • Déclenchement: créer/écrire/rédiger + « Epic »
 │  │  • Sortie: Epic en Markdown validée; propose création dans Jira
-│  │  • Flux: **Pré‑flight** → **consentement unique** → Créer (si câblé); sinon **fallback Markdown**
+│  │  • Flux: **Pré‑flight** → **consentement unique** → Créer (si câblé); sinon **bloc prêt à copier**
 │  │
 │  ├─ Évaluer la qualité d’une Epic (compétences: `COMMENT_WORK_ITEM`)
 │  │  • Déclenchement: intention d’évaluer/noter/diagnostiquer une Epic existante
@@ -29,7 +29,7 @@ Epic Studio — Blueprint de l’orchestration des flux (version actuelle)
 │  ├─ Améliorer une Epic existante (compétences: `EDIT_WORK_ITEM`, `COMMENT_WORK_ITEM`)
 │  │  • Déclenchement: améliorer/optimiser/réviser/corriger une Epic existante
 │  │  • Sortie: Rapport + version révisée (Markdown/diff)
-│  │  • Flux: **Pré‑flight OK** → **consentement unique** → `EDIT_WORK_ITEM` → **confirmation synchrone**; sinon **fallback Markdown**
+│  │  • Flux: **Pré‑flight OK** → **consentement unique** → `EDIT_WORK_ITEM` → **confirmation synchrone**; sinon **bloc prêt à copier**
 │  │
 │  ├─ Analyser avancement Epic (manuel) (compétences: `COMMENT_WORK_ITEM`)
 │  │  • Données: dates (création, résolution), due target, statut, enfants, liens, changelog (dernière activité/transitions), flagged
@@ -54,7 +54,7 @@ Epic Studio — Blueprint de l’orchestration des flux (version actuelle)
 │     • Flux: Alimente Améliorer
 │
 ├─ Flux croisés entre scénarios
-│  • Default → redirige vers Créer / Évaluer / Améliorer / Avancement / Portefeuille
+│  • Par défaut (routage) → redirige vers Créer / Évaluer / Améliorer / Avancement / Portefeuille
 │  • Créer → Évaluer (validation post‑création)
 │  • Évaluer (score < seuil) → Améliorer
 │  • Améliorer → Évaluer (post‑édition)
@@ -72,7 +72,7 @@ Epic Studio — Blueprint de l’orchestration des flux (version actuelle)
 │  2. Avancement (manuel/automation) → sinon Évaluer
 │  3. Évaluer la qualité → sinon Améliorer
 │  4. Améliorer une Epic → sinon Créer
-│  5. Créer une Epic de qualité → sinon Default (fallback)
+│  5. Créer une Epic de qualité → sinon Scénario par défaut (routage)
 │
 ├─ Handoffs — Prérequis minimums
 │  • Epic unique → `issue.key`/`issue.url` ou texte

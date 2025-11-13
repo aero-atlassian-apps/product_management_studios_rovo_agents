@@ -1,8 +1,5 @@
 # Ignore all files named automation.md anywhere
 automation.md
 
-# Ignore the Pitch folder under Docs
-Docs/Pitch/
-
 # Ignore all files named todo.md anywhere
 todo.md

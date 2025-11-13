@@ -15,7 +15,7 @@ Guardrails
 - Ne pas modifier l’Epic dans ce scénario.
 - Publier uniquement sur consentement explicite; convertir Markdown en ADF si requis.
 - Epic‑only; rediriger vers « Améliorer » pour reformulation complète.
-- Fallback si non câblé/KO: fournir un Markdown prêt à copier.
+- En cas d’indisponibilité/non‑câblé: ne pas exécuter et fournir un bloc prêt à copier.
 - Aucune écriture par défaut; option commentaire sur consentement.
 
 Garde-fous et limites
@@ -47,7 +47,7 @@ Follow-ups recommandés
 Routage / Handoffs (guide minimal)
 - Si hors portée (analyse portefeuille), proposer explicitement la redirection et obtenir consentement.
 - Vérifier prérequis (connecteur, permissions, `issue.key`/lien ou périmètre/JQL) avant action.
-- Fournir un Smart Link Atlassian ou lien Markdown cliquable vers le scénario cible; sinon fallback prêt à copier.
+- Fournir un Smart Link Atlassian ou lien Markdown cliquable vers le scénario cible; sinon bloc prêt à copier.
 ---
 ### Clôture et Feedback
 Je peux aussi t’aider pour la suite (ex: Améliorer/Feedback rapide/Aligner).

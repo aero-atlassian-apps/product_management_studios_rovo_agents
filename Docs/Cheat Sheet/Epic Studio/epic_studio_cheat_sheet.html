@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Epic Studio — Fiche Mémo (Capacités & Usages)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Architects+Daughter&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    @page { size: A4 portrait; margin: 8mm; }
+
+    :root {
+      --brand: #EA5B39;
+      --accent: #F7B02F;
+      --ink: #000000;
+      --paper: #FFFAFA;
+    }
+
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      padding: 0;
+      width: 210mm;
+      height: 297mm;
+      background: var(--paper);
+      font-family: 'Inter', sans-serif;
+      color: var(--ink);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Watermark */
+    .watermark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-4deg);
+      width: 120mm;
+      opacity: 0.08;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+      padding: 8mm 8mm;
+      height: 270mm;
+      box-sizing: border-box;
+    }
+
+    .title { text-align: center; margin-bottom: 4mm; }
+    h1 {
+      font-family: 'Patrick Hand', cursive;
+      font-size: 22pt;
+      color: var(--brand);
+      margin: 0;
+      transform: rotate(-0.3deg);
+    }
+    .underline {
+      width: 100mm; height: 1.6mm; margin: 0.8mm auto 1.6mm; background: var(--brand);
+      border-radius: 50%; transform: rotate(-0.5deg);
+    }
+    .subline { font-size: 9pt; color: #000000; transform: rotate(0.2deg); font-family: 'Patrick Hand', cursive; }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      grid-auto-rows: auto;
+      gap: 4mm;
+    }
+
+    .panel {
+      background: rgba(255,255,255,0.95);
+      border: 1.6pt solid var(--brand);
+      border-radius: 8pt;
+      padding: 3mm 4mm;
+      box-shadow: 2pt 2pt 0 rgba(234, 91, 57, 0.18);
+      position: relative;
+    }
+    .tilt-left { transform: rotate(-1.2deg); }
+    .tilt-right { transform: rotate(1deg); }
+    .sticky-shadow { box-shadow: 3pt 3pt 0 rgba(0,0,0,0.08); }
+    .panel h2 {
+      font-family: 'Patrick Hand', cursive;
+      font-size: 12.5pt;
+      color: var(--brand);
+      margin: 0 0 1.5mm;
+      border-bottom: 0.8pt solid var(--brand);
+      padding-bottom: 0.8mm;
+    }
+    .panel p, .panel li { font-size: 8.2pt; line-height: 1.38; margin: 0 0 1.2mm; }
+    .panel ul { margin: 0; padding-left: 3mm; }
+    .panel li::marker { color: var(--brand); }
+
+    /* Icons (inline SVG wrappers) */
+    .icon { display: inline-block; vertical-align: middle; margin-right: 4mm; }
+    .icon svg { width: 16px; height: 16px; color: var(--brand); }
+    .emoji { font-size: 13pt; margin-right: 3mm; }
+
+    /* Tags & Chips */
+    .chip { display: inline-block; background: var(--accent); color: var(--ink); padding: 0.8mm 2.2mm; border-radius: 4pt; font-size: 7.5pt; font-weight: 600; margin: 0.5mm 0.5mm 0.5mm 0; box-shadow: 0.6pt 0.6pt 0 rgba(247,176,47,0.3); }
+    .kpis { margin-top: 1.5mm; }
+
+    /* Bottom tags */
+    .bottom-row { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3mm; }
+    .note { font-family: 'Patrick Hand', cursive; font-size: 7.5pt; color: #666; text-align: center; margin-top: 2.5mm; }
+
+    /* Small sketch arrows */
+    .arrows { position: absolute; top: 32mm; left: 90mm; width: 110mm; opacity: 0.25; pointer-events: none; }
+
+    /* Print friendliness */
+    @media print {
+      .container { padding: 6mm; }
+      .panel { box-shadow: none; break-inside: avoid; }
+      .watermark { opacity: 0.05; }
+      .arrows { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Watermark using brand SVG -->
+  <div class="watermark">
+    <img src="../../../Brand/epic_studio_logo_icon_256x240.svg" alt="Epic Studio Logo" style="width: 100%; height: auto;"/>
+  </div>
+
+  <div class="container">
+    <div class="title">
+      <h1>Epic Studio — Fiche Mémo Agent Rovo</h1>
+      <div class="underline"></div>
+      <div class="subline">Cycle Epic de bout en bout : créer • évaluer • améliorer • analyser • portefeuille</div>
+    </div>
+
+    <!-- Decorative sketch arrows -->
+    <svg class="arrows" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+          <polygon points="0 0, 10 3, 0 6" fill="var(--brand)" />
+        </marker>
+      </defs>
+      <path d="M5,30 Q35,15 65,30 T125,30 T185,30" stroke="var(--brand)" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+    </svg>
+
+    <div class="grid">
+      <!-- Panel 1: Purpose & Promesse -->
+      <div class="panel tilt-left sticky-shadow" style="grid-column: 1;">
+        <h2><span class="emoji">🎯</span>Objectif & Promesse</h2>
+        <ul>
+          <li>Accompagne la gestion des Epics de bout en bout.</li>
+          <li>Sorties claires, prêtes à copier, centrées sur l’action.</li>
+          <li>Décisions restent humaines, consentement explicite avant action.</li>
+          <li>Focus Epic uniquement ; handoffs transparents si hors périmètre.</li>
+        </ul>
+      </div>
+
+      <!-- Panel 2: Capacités -->
+      <div class="panel tilt-right" style="grid-column: 2;">
+        <h2><span class="emoji">🛠️</span>Capacités (de bout en bout)</h2>
+        <ul>
+          <li><strong>Créer :</strong> transformer une idée en Epic claire.</li>
+          <li><strong>Évaluer :</strong> avis structuré + actions concrètes.</li>
+          <li><strong>Améliorer :</strong> réécritures ciblées (avant/après).</li>
+          <li><strong>Analyser la progression :</strong> vision simple + prochaines étapes.</li>
+          <li><strong>Portefeuille :</strong> vue d’ensemble, priorisation des améliorations.</li>
+        </ul>
+        <div class="kpis">
+          <span class="chip">Clarté</span>
+          <span class="chip">Ready</span>
+          <span class="chip">Momentum</span>
+          <span class="chip">Alignement</span>
+        </div>
+      </div>
+
+      <!-- Panel 3: Parcours & Quand l’utiliser -->
+      <div class="panel tilt-left" style="grid-column: 1;">
+        <h2><span class="emoji">🧭</span>Parcours & quand l’utiliser</h2>
+        <ul>
+          <li>Par défaut (guidé) → clarifier et orienter.</li>
+          <li>Créer → quand l’idée est mûre mais non cadrée.</li>
+          <li>Évaluer → quand il faut un avis rapide + actions.</li>
+          <li>Améliorer → quand des sections sont faibles ou floues.</li>
+          <li>Analyser la progression → quand l’avancement est ambigu.</li>
+          <li>Portefeuille → quand il faut prioriser en lot.</li>
+        </ul>
+      </div>
+
+      <!-- Panel 4: Exemples d’usage (prompts) -->
+      <div class="panel tilt-right" style="grid-column: 2;">
+        <h2><span class="emoji">🧪</span>Exemples d’usage</h2>
+        <p><strong>Créer :</strong> « Crée une Epic claire à partir de cette idée… »</p>
+        <p><strong>Évaluer :</strong> « Donne un avis rapide sur EPIC‑123 + 3 actions. »</p>
+        <p><strong>Améliorer :</strong> « Réécris la section “Objectifs” de EPIC‑123 pour être mesurable. »</p>
+        <p><strong>Progression :</strong> « Résume l’avancement de EPIC‑123 et propose les 3 prochaines étapes. »</p>
+        <p><strong>Portefeuille :</strong> « Passe en revue ces 10 Epics et priorise 5 améliorations. »</p>
+      </div>
+
+      <!-- Panel 5: Cycle de vie (sketch) -->
+      <div class="panel sticky-shadow" style="grid-column: 1 / -1;">
+        <h2><span class="emoji">🔁</span>Cycle de vie Epic (mémo visuel)</h2>
+        <div style="display:flex; align-items:center; gap:6mm; justify-content:space-between;">
+          <div style="font-family:'Patrick Hand', cursive; font-size:10pt; transform:rotate(-2deg);">✏️ Créer</div>
+          <svg viewBox="0 0 80 16" width="80" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M2 8 Q20 2 40 8 T78 8" stroke="var(--brand)" stroke-width="1.6" fill="none"/></svg>
+          <div style="font-family:'Patrick Hand', cursive; font-size:10pt; transform:rotate(1deg);">🧪 Évaluer</div>
+          <svg viewBox="0 0 80 16" width="80" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M2 8 Q20 14 40 8 T78 8" stroke="var(--brand)" stroke-width="1.6" fill="none"/></svg>
+          <div style="font-family:'Patrick Hand', cursive; font-size:10pt; transform:rotate(-1deg);">🛠️ Améliorer</div>
+          <svg viewBox="0 0 80 16" width="80" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M2 8 Q20 2 40 8 T78 8" stroke="var(--brand)" stroke-width="1.6" fill="none"/></svg>
+          <div style="font-family:'Patrick Hand', cursive; font-size:10pt; transform:rotate(2deg);">📈 Progression</div>
+          <svg viewBox="0 0 80 16" width="80" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M2 8 Q20 14 40 8 T78 8" stroke="var(--brand)" stroke-width="1.6" fill="none"/></svg>
+          <div style="font-family:'Patrick Hand', cursive; font-size:10pt; transform:rotate(-2deg);">🗂️ Portefeuille</div>
+        </div>
+        <p class="note">Choisir le parcours selon le besoin immédiat ; rester épuré et actionnable.</p>
+      </div>
+
+      <!-- Panel 6: Bonnes pratiques d’usage -->
+      <div class="panel tilt-left" style="grid-column: 1;">
+        <h2><span class="emoji">💡</span>Bonnes pratiques</h2>
+        <ul>
+          <li>Demande concise ; un objectif précis par interaction.</li>
+          <li>Favoriser des formulations mesurables et des résultats attendus.</li>
+          <li>Utiliser les parcours dédiés au bon moment.</li>
+          <li>Publier après relecture ; garder les décisions humaines.</li>
+        </ul>
+      </div>
+
+      <!-- Panel 7: Ce que tu obtiens -->
+      <div class="panel tilt-right" style="grid-column: 2;">
+        <h2><span class="emoji">✅</span>Ce que tu obtiens</h2>
+        <ul>
+          <li>Résumé clair (TL;DR) + 3–5 actions immédiates.</li>
+          <li>Version prête à copier et publier (description/commentaire).</li>
+          <li>Handoffs explicites si besoin d’un autre parcours.</li>
+          <li>Confiance : sorties utiles, sans jargon technique.</li>
+        </ul>
+      </div>
+
+      <!-- Bas de page : Principes & Valeur -->
+      <div class="panel" style="grid-column: 1 / -1;">
+        <div class="bottom-row">
+          <div>
+            <h2>🛡️ Principes</h2>
+            <p>Consentement avant action • Sorties prêtes à copier • Portée Epic‑only • Handoffs transparents</p>
+          </div>
+          <div>
+            <h2>📈 Valeur</h2>
+            <p><span class="chip">Clarté accrue</span><span class="chip">Prêts plus rapides</span><span class="chip">Moins de rework</span><span class="chip">Meilleure priorisation</span></p>
+          </div>
+        </div>
+        <div class="note">Reste simple, actionnable et humain. L’essentiel tient sur une page A4.</div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

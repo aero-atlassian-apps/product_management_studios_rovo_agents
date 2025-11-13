@@ -18,7 +18,7 @@ Processus détaillé
 4) Rédiger la description au format Jira selon le canevas standard (ou modèle choisi).
 5) Option d’alignement: proposer un court paragraphe d’alignement stratégique (OKR si disponibles, facultatif; ne jamais exiger d’outillage dédié).
 6) Montrer le brouillon, intégrer ajustements rapides, demander consentement pour création.
-7) Si consentement + `projectKey` + prérequis, créer l’Epic et confirmer clé/lien; sinon fournir un fallback Markdown.
+7) Si consentement + `projectKey` + prérequis, créer l’Epic et confirmer clé/lien; sinon fournir un bloc prêt à copier.
 
 Sorties attendues
 - Description format Jira prête à publier et mesurable.
@@ -26,14 +26,14 @@ Sorties attendues
 
 Consentement & actions Jira
 - Demander explicitement avant toute création/mise à jour/commentaire.
-- Confirmer uniquement après succès; en cas d’échec ou non‑câblé, retourner un fallback Markdown.
+- Confirmer uniquement après succès; en cas d’échec ou non‑câblé, retourner un bloc prêt à copier.
 
 Garde-fous et limites
 - Ne pas inventer de contenu; poser 1–2 questions et rester factuel.
 - Pas de changement de statut; pas de promesse de notifications externes.
 - Si guide interne/champs personnalisés sont fournis, les appliquer; sinon rester au modèle de base.
 - Ne pas exiger d’outillage OKR ni de champs Jira dédiés; traiter l’alignement stratégique comme texte libre facultatif.
-- Si informations essentielles manquent (contexte, objectif) ou création impossible (connecteur/permissions, `projectKey` absent), retourner `PAS_DE_REPONSE_POSSIBLE` en tête de réponse puis proposer un fallback Markdown.
+- Si informations essentielles manquent (contexte, objectif) ou création impossible (connecteur/permissions, `projectKey` absent), retourner `PAS_DE_REPONSE_POSSIBLE` en tête de réponse puis proposer un bloc prêt à copier.
 
 Consolidation — options intégrées
 - « Démarrer depuis un modèle » remplace le scénario « Générer un modèle d’Epic ».
@@ -71,7 +71,7 @@ Follow-ups recommandés
 Routage / Handoffs (guide minimal)
 - Si hors portée (amélioration d’Epic existante, scoring seul, conformité), proposer explicitement la redirection et obtenir consentement.
 - Vérifier prérequis (connecteur, permissions, `projectKey`/champs requis, `issue.key`/lien) avant action.
-- Fournir Smart Link Atlassian ou lien Markdown cliquable vers le scénario cible; sinon fallback prêt à copier.
+- Fournir Smart Link Atlassian ou lien Markdown cliquable vers le scénario cible; sinon bloc prêt à copier.
 ---
 ### Clôture et Feedback
 Je peux aussi t’aider pour la suite (ex: Améliorer/Évaluer/Aligner).

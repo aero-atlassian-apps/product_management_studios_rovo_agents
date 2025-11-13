@@ -1,14 +1,14 @@
 ## Scénario — Accompagner PRODUCT
 
-### Déclenchement
-Scénario par défaut (fallback): s’exécute uniquement si aucun autre scénario n’est déclenché.
-Activer quand l’intention est ambigüe ou mixte autour des Epics et que l’utilisateur demande « comment procéder » ou « quoi faire ensuite ».
+## Déclenchement
+Scénario par défaut (routage): s’exécute uniquement si aucun autre scénario ne correspond.
+Activer quand l’intention est ambigüe ou mixte autour des Epics; agit comme routeur vers un scénario Epic supporté (incl. portefeuille).
 
 ## Starters de conversation (2 lignes utiles)
 - « Aide à cadrer mon intention autour de l’Epic `[issue.key]` »
 - « Propose 3 options et prochaines étapes pour `[idée/objectif]` »
 
-### Exemples positifs
+## Exemples positifs
 - « J’ai une Epic, tu peux m’aider ? »
 - « Faut‑il l’améliorer ou juste l’évaluer ? »
 - « Que proposes‑tu pour mon Epic ? »
@@ -16,7 +16,7 @@ Activer quand l’intention est ambigüe ou mixte autour des Epics et que l’ut
 - « Sparring sur l’idée [X] avec métrique cible [Y] »
 - « Donne 3 options avec trade‑offs et prochaines étapes »
 
-### Exemples négatifs
+## Exemples négatifs
 - « Explique comment utiliser l’agent » → Expliquer comment utiliser
 - « Donne un score à EPIC‑123 » → Évaluer la qualité d’une Epic
 - « Crée une nouvelle Epic pour X » → Créer une Epic de qualité

@@ -1,46 +1,29 @@
-# Scoring automatique d’une Epic — Trigger (Automation‑only)
+## Scénario — Scoring automatique d’une Epic (automation‑only)
 
-Intent unique (obligatoire)
-- Utiliser exactement: `rovo:automation:epic_score_v1`
-- Doit apparaître en tête du message d’automatisation.
+### Déclenchement
+Activer uniquement via l’intent d’automation: `rovo:automation:epic_score_v1`.
 
-Conditions d’entrée
-- Le message inclut soit une `key` (ex: `EPIC-123`) soit une `url` (ex: `https://.../browse/EPIC-123`).
-- Le prompt DOIT inclure `previous score <VAL>` où `<VAL>` est une valeur numérique (ex: `78`, `78.4`, `0.85`, `85%`) ou le mot clé `EMPTY` si aucun score précédent n’est disponible.
-- Lorsque les deux (`key` et `url`) sont disponibles dans le contexte d’automatisation, les utiliser.
+### Entrées
+- Obligatoire: `key` (clé de l’Epic) OU `url`.
+- Le prompt DOIT inclure `previous score <VAL>` où `<VAL>` est une valeur numérique (ex: `78`, `78.4`, `0.85`, `85%`) ou `EMPTY` si aucun score précédent n’est disponible.
+- Lorsque `key` et `url` sont disponibles, les utiliser toutes deux.
 
-Garde‑fous (anti‑chat)
-- Si l’intent `rovo:automation:epic_score_v1` est absent ou si l’item n’est pas fourni, refuser poliment: « Ce scénario est réservé à l’automatisation Jira. Utilise “Évaluer la qualité d’une Epic” en chat. »
-- Ne pas demander de consentement: ce scénario est non interactif et doit produire une sortie immédiatement.
-
-Sortie attendue (strict JSON, aucune prose)
-- Un objet JSON unique, sans backticks, sans Markdown.
+### Sortie
+- Strict JSON, un seul objet, aucune prose ni Markdown.
 - Clés: `key`, `url`, `score`, `insight`, `recommendations`.
 
-Exemple d’appel (Jira Automation)
-```
-rovo:automation:epic_score_v1 EPIC-123 previous score {{issue.customfield_10091}}
+### Exemples de requêtes (automation)
+- `rovo:automation:epic_score_v1 EPIC-123 previous score {{issue.customfield_10091}}`
+- `rovo:automation:epic_score_v1 https://jira.example.com/browse/EPIC-123 previous score EMPTY`
 
-<coller ici le contenu synthétique de l’Epic, son champ description, objectifs, critères, etc.>
+### Exemples négatifs (refuser)
+- intent absent ou différent → refuser (automation uniquement).
+- Demande de publication/commentaire → refuser (sortie JSON immédiate, sans action Jira).
 
--- ou --
+## Garde‑fous
+- Scénario non interactif; ne pas demander de consentement.
+- Si `key`/`url` manquant: répondre en strict JSON avec une erreur normalisée.
+- Rediriger le chat vers « Évaluer la qualité d’une Epic ».
 
-rovo:automation:epic_score_v1 https://jira.example.com/browse/EPIC-123 previous score EMPTY
-
-<coller ici le contenu synthétique de l’Epic, son champ description, objectifs, critères, etc.>
-```
-
-Exemple de sortie (documentation, ne pas inclure de texte autour)
-```
-{
-  "key": "EPIC-123",
-  "url": "https://jira.example.com/browse/EPIC-123",
-  "score": 85,
-  "insight": "Première évaluation: critères partiellement conformes; objectifs insuffisamment mesurables.",
-  "recommendations": [
-    "Préciser résultats mesurables et indicateurs",
-    "Ajouter critères d’acceptation GIVEN/WHEN/THEN",
-    "Relier à objectifs/initiatives (OKR si disponibles)"
-  ]
-}
-```
+## Flux
+- Valider l’intent → extraire `key`/`url` et `prev_score` → lire contenu Epic → appliquer la logique de scoring → produire l’objet JSON structuré.

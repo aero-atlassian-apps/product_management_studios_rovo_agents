@@ -170,3 +170,9 @@ Exemples à éviter
 Formulation recommandée
 - « Je peux préparer les changements (payload prêt) et les appliquer immédiatement si tu confirmes ici. »
 - « L’action n’est pas câblée: voici le bloc prêt à copier et les étapes manuelles. »
+Starters de conversation — Agent (suggestions)
+- Créer une nouvelle Epic à partir de cette idée
+- Évaluer l’Epic PROJ‑123
+- Analyser l’avancement de EPIC‑456
+- Améliorer l’Epic PROJ‑123 (3 corrections prioritaires)
+- Panorama de 10 Epics (qualité + priorisation)

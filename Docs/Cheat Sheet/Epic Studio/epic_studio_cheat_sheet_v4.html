@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Epic Studio — Fiche Mémo Agent Rovo (v4)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Architects+Daughter&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    @page { size: A4 portrait; margin: 0; }
+
+    :root {
+      --brand: #EA5B39;
+      --accent: #F7B02F;
+      --ink: #000000;
+      --paper: #FFFAFA;
+    }
+
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      padding: 0;
+      width: 210mm;
+      height: 297mm;
+      background: var(--paper);
+      font-family: 'Inter', sans-serif;
+      color: var(--ink);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Watermark */
+    .watermark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-4deg);
+      width: 120mm;
+      opacity: 0.08;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+      padding: 8mm 8mm;
+      height: 270mm;
+      box-sizing: border-box;
+    }
+
+    .title { text-align: center; margin-bottom: 4mm; }
+    h1 {
+      font-family: 'Patrick Hand', cursive;
+      font-size: 22pt;
+      color: var(--brand);
+      margin: 0;
+      transform: rotate(-0.3deg);
+    }
+    .underline {
+      width: 100mm; height: 1.6mm; margin: 0.8mm auto 1.6mm; background: var(--brand);
+      border-radius: 50%; transform: rotate(-0.5deg);
+    }
+    .subline { font-size: 9pt; color: #000000; transform: rotate(0.2deg); font-family: 'Patrick Hand', cursive; }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto auto 1fr;
+      gap: 4mm;
+    }
+
+    .panel {
+      background: rgba(255,255,255,0.95);
+      border: 1.4pt solid var(--brand);
+      border-radius: 7pt;
+      padding: 3mm 4mm;
+      box-shadow: 2pt 2pt 0 rgba(234, 91, 57, 0.15);
+      position: relative;
+    }
+    .panel h2 {
+      font-family: 'Patrick Hand', cursive;
+      font-size: 12.5pt;
+      color: var(--brand);
+      margin: 0 0 1.5mm;
+      border-bottom: 0.8pt solid var(--brand);
+      padding-bottom: 0.8mm;
+    }
+    .panel p, .panel li { font-size: 8.2pt; line-height: 1.38; margin: 0 0 1.2mm; }
+    .panel ul { margin: 0; padding-left: 3mm; }
+    .panel li::marker { color: var(--brand); }
+
+    /* Icons (inline SVG wrappers) */
+    .icon { display: inline-block; vertical-align: middle; margin-right: 4mm; }
+    .icon svg { width: 16px; height: 16px; color: var(--brand); }
+
+    /* Tags & Chips */
+    .chip { display: inline-block; background: var(--accent); color: var(--ink); padding: 0.8mm 2.2mm; border-radius: 4pt; font-size: 7.5pt; font-weight: 600; margin: 0.5mm 0.5mm 0.5mm 0; box-shadow: 0.6pt 0.6pt 0 rgba(247,176,47,0.3); }
+    .kpis { margin-top: 1.5mm; }
+
+    /* Bottom tags */
+    .bottom-row { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; }
+    .note { font-family: 'Patrick Hand', cursive; font-size: 7.5pt; color: #666; text-align: center; margin-top: 2.5mm; }
+
+    /* Small sketch arrows */
+    .arrows { position: absolute; top: 32mm; left: 98mm; width: 100mm; opacity: 0.25; pointer-events: none; }
+
+    /* Print friendliness */
+    @media print {
+      .container { padding: 6mm; }
+      .panel { box-shadow: none; break-inside: avoid; }
+      .watermark { opacity: 0.06; }
+      .arrows { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Watermark using brand SVG -->
+  <div class="watermark">
+    <img src="../../../Brand/epic_studio_logo_icon_256x240.svg" alt="Epic Studio Logo" style="width: 100%; height: auto;"/>
+  </div>
+
+  <div class="container">
+    <div class="title">
+      <h1>Epic Studio — Fiche Mémo Agent Rovo</h1>
+      <div class="underline"></div>
+      <div class="subline">Cycle Epic de bout en bout : créer • évaluer • améliorer • analyser • automatiser</div>
+    </div>
+
+    <!-- Decorative sketch arrows -->
+    <svg class="arrows" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+          <polygon points="0 0, 10 3, 0 6" fill="var(--brand)" />
+        </marker>
+      </defs>
+      <path d="M5,30 Q35,15 65,30 T125,30 T185,30" stroke="var(--brand)" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+    </svg>
+
+    <div class="grid">
+      <!-- Panel 1: Qu'est‑ce que l'agent ? -->
+      <div class="panel">
+        <h2><span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7L12 12L22 7L12 2Z"></path><path d="M2 12L12 17L22 12"></path><path d="M2 17L12 22L22 17"></path></svg>
+        </span>Qu'est‑ce que l'agent&nbsp;?</h2>
+        <ul>
+          <li>Agent d'orchestration dédié aux Epics dans Jira</li>
+          <li>Renforce le jugement produit ; décisions finales humaines</li>
+          <li>Consentement avant action et vérifications préalables</li>
+          <li>Sorties prêtes à copier ; actions non destructives par défaut</li>
+        </ul>
+      </div>
+
+      <!-- Panel 2: Capacités (De bout en bout) -->
+      <div class="panel">
+        <h2><span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 12L16 8"></path></svg>
+        </span>Capacités (De bout en bout)</h2>
+        <ul>
+          <li><strong>Créer :</strong> idée brute → Epic claire et complète</li>
+          <li><strong>Évaluer :</strong> score qualité (0‑100) + recommandations ciblées</li>
+          <li><strong>Score & recommandations automatiques :</strong> cohérents, rapides, protégés</li>
+          <li><strong>Améliorer :</strong> réécritures précises avec avant/après</li>
+          <li><strong>Analyser la progression :</strong> complétude & momentum (manuel + automatique)</li>
+          <li><strong>Portefeuille :</strong> distribution qualité, taux de prêt, détection des doublons/chevauchements</li>
+        </ul>
+        <div class="kpis">
+          <span class="chip">Score de qualité Epic (moyenne, distribution)</span>
+          <span class="chip">Taux de prêt (%)</span>
+          <span class="chip">Délai (idée → Prêt)</span>
+          <span class="chip">Chevauchement/Duplications évités</span>
+        </div>
+      </div>
+
+      <!-- Panel 3: Scénarios actifs -->
+      <div class="panel">
+        <h2><span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M9 9h6v6H9z"></path></svg>
+        </span>Scénarios actifs</h2>
+        <ul>
+          <li>Entrée guidée (par défaut)</li>
+          <li>Créer une Epic de qualité</li>
+          <li>Évaluer la qualité d'une Epic</li>
+          <li>Améliorer une Epic existante</li>
+          <li>Analyser avancement Epic (manuel)</li>
+          <li>Analyse automatique de l’avancement d’une Epic (automatisation)</li>
+          <li>Scoring automatique d’une Epic (automatisation)</li>
+          <li>Analyser portefeuille Epics</li>
+        </ul>
+      </div>
+
+      <!-- Panel 4: Mode d'emploi (Manuel) -->
+      <div class="panel">
+        <h2><span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h10"></path></svg>
+        </span>Mode d'emploi (Manuel)</h2>
+        <p><strong>Créer :</strong> « Créer une Epic de haute qualité à partir de cette idée… » → Markdown prêt à copier</p>
+        <p><strong>Évaluer :</strong> « Évaluer l'Epic EPIC‑123 et donner un score 0‑100 + 3 recommandations. »</p>
+        <p><strong>Améliorer :</strong> « Réécrire les sections faibles de EPIC‑123 (avant/après). »</p>
+        <p><strong>Progression :</strong> « Analyser la progression de EPIC‑123 et proposer 3 prochaines actions. »</p>
+        <p><strong>Portefeuille :</strong> « Examiner ces 10 Epics ; résumer la qualité et prioriser les améliorations. »</p>
+      </div>
+
+      <!-- Panel 5: Automatisation (Jira) -->
+      <div class="panel" style="grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 4mm;">
+        <div>
+          <h2><span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v5M12 17v5M4.22 4.22l3.54 3.54M16.24 16.24l3.54 3.54M2 12h5M17 12h5M4.22 19.78l3.54-3.54M16.24 7.76l3.54-3.54"></path></svg>
+          </span>Automatisation — Évaluation nocturne (planifiée)</h2>
+          <ul>
+            <li><strong>Déclencheur :</strong> tous les jours à 02h</li>
+            <li><strong>Portée :</strong> Epics des projets ABC et DEF encore actives</li>
+            <li><strong>Actions :</strong> évaluer → attribuer un score → formuler des recommandations → ajouter un commentaire → (optionnel) remplir le champ « Epic Quality Score »</li>
+          </ul>
+        </div>
+        <div>
+          <h2><span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"></path></svg>
+          </span>Automatisation — Analyse de progression (à la transition)</h2>
+          <ul>
+            <li><strong>Déclencheur :</strong> passage au statut « Ready for Review » (type : Epic)</li>
+            <li><strong>Actions :</strong> lancer l'analyse de complétude → ajouter un commentaire → (optionnel) renseigner « Progress Completeness » → ajouter le label « needs‑changes » si sous le seuil</li>
+          </ul>
+        </div>
+        <div style="grid-column: 1 / -1; margin-top: 2mm;">
+          <span class="chip">Consentement avant action</span>
+          <span class="chip">Défauts non destructifs</span>
+          <span class="chip">Journal d'audit</span>
+          <span class="chip">Sorties prêtes à copier</span>
+        </div>
+      </div>
+
+      <!-- Panel 6: Actions rapides & exemples -->
+      <div class="panel">
+        <h2><span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18"></path><path d="M12 3v18"></path></svg>
+        </span>Actions rapides & exemples</h2>
+        <p><strong>Manuel :</strong> « Évaluer EPIC‑123 → score + 3 recommandations »</p>
+        <p><strong>Manuel :</strong> « Améliorer EPIC‑123 → réécrire les objectifs pour être mesurables »</p>
+        <p><strong>Automatisation :</strong> <code>intent=rovo:automation:epic_score_v1 key=EPIC-123</code></p>
+        <p><strong>Automatisation :</strong> <code>intent=rovo:automation:epic_progress_v1 url=https://jira/.../browse/EPIC-123</code></p>
+      </div>
+
+      <!-- Panel 7: Signaux de données -->
+      <div class="panel">
+        <h2><span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19h16"></path><path d="M4 15h10"></path><path d="M4 11h7"></path><path d="M4 7h13"></path></svg>
+        </span>Signaux de données</h2>
+        <ul>
+          <li>Dates : création/résolution/début/échéance ; âge & cycle time</li>
+          <li>Statut / temps en statut ; To Do / In Progress / Done</li>
+          <li>Enfants : total/terminé/en cours ; % complétion, réouvertures, churn</li>
+          <li>Liens : bloqué par / bloque / relie ; flagged</li>
+          <li>Changelog : dernière transition/activité ; transitions sur 14 jours</li>
+          <li>Résumé : On Track / At Risk / Late + confiance</li>
+        </ul>
+      </div>
+
+      <!-- Bas de page : Guardrails & KPI -->
+      <div class="panel" style="grid-column: 1 / -1;">
+        <div class="bottom-row">
+          <div>
+            <h2>🛡️ Guardrails & Confiance</h2>
+            <p>Consentement avant action • Solution de secours sûre (prêt à copier) • Portée Epic‑only • Défauts non destructifs • Journal d'audit</p>
+          </div>
+          <div>
+            <h2>📊 KPI</h2>
+            <p><span class="chip">Score de qualité Epic</span><span class="chip">Taux de prêt</span><span class="chip">Délai (idée → Prêt)</span><span class="chip">Duplication/Chevauchement évité</span></p>
+          </div>
+        </div>
+        <div class="note">Pilote : 3 domaines, 5 KPI, 6–8 semaines. Consentement d'abord, sorties prêtes à copier.</div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

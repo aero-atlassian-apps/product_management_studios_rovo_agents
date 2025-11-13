@@ -1,19 +1,19 @@
 ## Scénario — Analyse automatique de l’avancement d’une Epic (automation‑only)
 
-### Déclenchement
+## Déclenchement
 Activer uniquement via l’intent d’automation: `rovo:automation:epic_progress_v1`.
 
-### Entrées
+## Entrées
 - Obligatoire: `key` (clé de l’Epic) OU `url`.
 
-### Sortie
+## Sortie
 - Strict JSON (sans Markdown) décrivant l’analyse d’avancement et l’insight équivalent au commentaire du mode manuel.
 
-### Exemples de requêtes (automation)
+## Exemples de requêtes (automation)
 - intent=`rovo:automation:epic_progress_v1`, key=`EPIC-123`
 - intent=`rovo:automation:epic_progress_v1`, url=`https://jira/.../browse/EPIC-123`
 
-### Exemples négatifs (refuser)
+## Exemples négatifs (refuser)
 - intent absent ou différent → retourner une erreur JSON normalisée.
 - Demande de publication de commentaire → refuser (automation = NO_SKILLS).
 

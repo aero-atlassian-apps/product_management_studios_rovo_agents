@@ -17,10 +17,10 @@ Déclenchez ce scénario lorsque l’utilisateur veut créer/rédiger une nouvel
 - « Analyse l’avancement de cette Epic » → Analyser avancement Epic
 - « Décompose en stories » → Product Backlog Studio
 
-## Starters de conversation:
-- « Créer une nouvelle Epic pour `[sujet]` dans `[projectKey]` »
-- « Rédiger une Epic orientée résultat pour `[objectif]` »
-- « Démarrer depuis le modèle standard pour `[sujet]` »
+## Conversation starters:
+- « Créer une nouvelle Epic pour un sujet dans un projet »
+- « Rédiger une Epic orientée résultat pour un objectif »
+- « Démarrer depuis le modèle standard pour un sujet »
 - L’alignement aux objectifs/initiatives (OKR si disponibles) est facultatif et intégré.
 
 ## Handoffs (redirections)

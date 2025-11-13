@@ -16,7 +16,7 @@ Déclenchez ce scénario lorsque l’utilisateur demande une évaluation ou un s
 - « Analyse l’avancement de cette Epic » → Analyser avancement Epic
 - « Fais le panorama de 15 Epics » → Analyser portefeuille Epics
 
-## Starters de conversation:
-- « Évaluer l’Epic `[issue.key]` et donner un score synthétique »
-- « Score par dimension (contexte/objectif/critères) pour `[issue.key]` »
-- « Avis rapide non‑noté pour `[issue.key]` (diagnostic express) »
+## Conversation starters:
+- « Évaluer une Epic et donner un score synthétique »
+- « Score par dimension (contexte/objectif/critères) pour une Epic »
+- « Avis rapide non‑noté pour une Epic (diagnostic express) »

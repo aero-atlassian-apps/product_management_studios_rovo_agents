@@ -15,7 +15,7 @@ Déclenchez ce scénario lorsque l’utilisateur demande un insight, un état d�
 - « Fais le panorama de 15 Epics » → Analyser portefeuille Epics
 - « Score qualité 0–100 de cette Epic » → Évaluer la qualité d’une Epic
 
-## Starters de conversation:
-- « Donne l’état d’avancement de l’Epic `[issue.key]` »
-- « Sommes‑nous en retard sur `[issue.key]` ? Donne dates et progression »
-- « Diagnostic de progression pour l’Epic `[issue.key]` (enfants + blocages) »
+## Conversation starters:
+- « Donner l’état d’avancement d’une Epic »
+- « Sommes‑nous en retard sur une Epic ? Donne dates et progression »
+- « Diagnostic de progression pour une Epic (enfants + blocages) »

@@ -28,7 +28,7 @@ Activer quand l’intention est ambigüe ou mixte autour des Epics et que l’ut
 - Hors portée: exécutions directes sans clarification.
 
 Note de consolidation
-- Sert d’entrée et de routage vers les 5 parcours actifs (Créer, Améliorer, Évaluer, Portefeuille, Scoring automatique).
+- Sert d’entrée et de routage vers les 5 parcours actifs (Créer, Améliorer, Évaluer, Portefeuille, [AUTO] Scoring & évaluation d’une Epic).
 
 ## Handoffs (redirections)
 - Après clarification → rediriger explicitement vers Créer/Améliorer/Évaluer/etc. avec consentement.

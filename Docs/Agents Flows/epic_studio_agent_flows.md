@@ -35,13 +35,13 @@ Epic Studio — Blueprint de l’orchestration des flux (version actuelle)
 │  │  • Données: dates (création, résolution), due target, statut, enfants, liens, changelog (dernière activité/transitions), flagged
 │  │  • Sortie: Rapport Markdown (risques: Schedule/Execution/Dépendances) + insights + actions; propose publication commentaire
 │  │
-│  ├─ Analyse automatique de l’avancement d’une Epic (automation‑only)
+│  ├─ [AUTO] Analyser avancement Epic (automation‑only)
 │  │  • Déclenchement: intent `rovo:automation:epic_progress_v1`
 │  │  • Entrées: `key` ou `url`; optionnels: `weights`, `stalled_days_threshold`, `locale`
 │  │  • Sortie: **JSON strict** (métadonnées, scores, risque, insights, recommandations, `changelog_summary`, `data_gaps`)
 │  │  • Règles: pas de Markdown/publication; validation d’intent; erreurs normalisées
 │  │
-│  └─ Scoring automatique d’une Epic (automation‑only)
+│  └─ [AUTO] Scoring & évaluation d’une Epic (automation‑only)
 │     • Déclenchement: intent `rovo:automation:epic_score_v1`
 │     • Entrées: `key` ou `url` + `previous_score <VAL|EMPTY>`
 │     • Sortie: **JSON strict** (`key`, `url`, `score`, `insight`, `recommendations`)
@@ -87,8 +87,8 @@ Epic Studio — Blueprint de l’orchestration des flux (version actuelle)
 │  | Évaluer la qualité d’une Epic | `issue.key` ou `issue.url` | Mode (`bref`/`normal`/`détaillé`) | Score 0–100 (5 dims) + recommandations | `COMMENT_WORK_ITEM` | Pas d’édition sans consentement |
 │  | Améliorer une Epic existante | `issue.key` ou `issue.url` | Champ(s) ciblé(s) | Rapport + version révisée (Markdown/diff) | `EDIT_WORK_ITEM`, `COMMENT_WORK_ITEM` | Confirmation synchrone |
 │  | Analyser avancement Epic (manuel) | `issue.key` ou `issue.url` | `due_soon_days`, `low_completion_threshold`, `locale` | Rapport Markdown: risques, insights, actions | `COMMENT_WORK_ITEM` | Inclut changelog, flagged, stall, reopens |
-│  | Analyse automatique avancement Epic | intent `rovo:automation:epic_progress_v1` + `key`/`url` | `weights`, `stalled_days_threshold`, `locale` | JSON strict (métadonnées, scores, risque, `changelog_summary`) | `NO_SKILLS` | Pas de Markdown/publication |
-│  | Scoring automatique d’une Epic | intent `rovo:automation:epic_score_v1` + `key`/`url` | `previous_score` | JSON strict (`score`, `insight`, `recommendations`) | `NO_SKILLS` | Normalisation de score |
+│  | [AUTO] Analyser avancement Epic | intent `rovo:automation:epic_progress_v1` + `key`/`url` | `weights`, `stalled_days_threshold`, `locale` | JSON strict (métadonnées, scores, risque, `changelog_summary`) | `NO_SKILLS` | Pas de Markdown/publication |
+│  | [AUTO] Scoring & évaluation d’une Epic | intent `rovo:automation:epic_score_v1` + `key`/`url` | `previous_score` | JSON strict (`score`, `insight`, `recommendations`) | `NO_SKILLS` | Normalisation de score |
 │  | Analyser portefeuille Epics | Liste de clés/liens ou périmètre/JQL | Fenêtre temporelle; tri | Synthèse par lot; priorisation | `COMMENT_WORK_ITEM` | Paginer > 10; lot ≤ 20 |
 │
 ├─ JSON de l’analyse automatique — Schéma (résumé)
@@ -109,11 +109,11 @@ Epic Studio — Blueprint de l’orchestration des flux (version actuelle)
    • Documenter toute pagination (lot ≤ 20) et fournir la couverture/limites.
 
 └─ Exemples In/Out rapides
-   • Analyse automatique avancement Epic (automation)
+   • [AUTO] Analyser avancement Epic (automation)
      Entrée/Sortie: voir exemples JSON
 
    • Évaluer la qualité d’une Epic (manuel)
      Entrée: `issue.key` + `mode`; Sortie: Markdown (score + recommandations)
 
-   • Scoring automatique d’une Epic (automation)
+   • [AUTO] Scoring & évaluation d’une Epic (automation)
      Entrée: intent + `key` + `previous_score`; Sortie: JSON (score + recommandations)

@@ -1,4 +1,4 @@
-## Scénario — Analyse automatique de l’avancement d’une Epic (automation‑only)
+## Scénario — [AUTO] Analyser avancement Epic (automation‑only)
 
 ## Déclenchement
 Activer uniquement via l’intent d’automation: `rovo:automation:epic_progress_v1`.

@@ -47,8 +47,8 @@ This prompt is designed for Google Note LM (or similar design tools) to generate
 - Évaluer la qualité d’une Epic
 - Améliorer une Epic existante
 - Analyser avancement Epic (manuel)
-- Analyse automatique de l’avancement d’une Epic (automation‑only)
-- Scoring automatique d’une Epic (automation‑only)
+- [AUTO] Analyser avancement Epic (automation‑only)
+- [AUTO] Scoring & évaluation d’une Epic (automation‑only)
 - Analyser portefeuille Epics
 
 ### Panel 4 — How to Use (Manual)
@@ -118,7 +118,7 @@ This prompt is designed for Google Note LM (or similar design tools) to generate
 Panels and bullets:
 1) What is the agent: Epic‑only orchestration; consent‑first; pre‑flight; copy‑ready outputs.
 2) Capabilities end‑to‑end: Create; Evaluate (0–100 + recos); Automatic scoring & recommendations; Improve existing (before/after); Analyze Epic progress (manual+automatic completeness); Analyze Epic portfolio (quality distribution, ready rate, duplicates/overlaps).
-3) Active scenarios (French labels): Default; Créer une Epic de qualité; Évaluer la qualité d’une Epic; Améliorer une Epic existante; Analyser avancement Epic (manuel); Analyse automatique de l’avancement d’une Epic; Scoring automatique d’une Epic; Analyser portefeuille Epics.
+3) Active scenarios (French labels): Default; Créer une Epic de qualité; Évaluer la qualité d’une Epic; Améliorer une Epic existante; Analyser avancement Epic (manuel); [AUTO] Analyser avancement Epic; [AUTO] Scoring & évaluation d’une Epic; Analyser portefeuille Epics.
 4) How to use (manual): short commands for create, evaluate, improve, progress, portfolio.
 5) How to use (automation, Jira Automation): nightly scoring (cron `0 2 * * *`, JQL scope); progress analysis on transition to ‘Ready for Review’; actions are non‑destructive.
 

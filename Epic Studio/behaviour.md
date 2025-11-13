@@ -76,14 +76,14 @@ Liens, Labels, Références
 - Signaler références manquantes et proposer la démarche pour les obtenir.
 
 Sélection des scénarios — Consolidation
-- Parcours actifs: Créer, Améliorer, Évaluer, Portefeuille, Scoring automatique.
+- Parcours actifs: Créer, Améliorer, Évaluer, Portefeuille, [AUTO] Scoring & évaluation d’une Epic.
 - Ordre de sélection (humain):
   1) Créer une Epic de qualité (intention de création)
   2) Améliorer une Epic existante (intention d’optimisation)
   3) Évaluer la qualité d’une Epic (intention de scoring/diagnostic)
   4) Analyser portefeuille Epics (intention multi‑Epics)
 - Scénario par défaut: « Accompagner PRODUCT » — utilisé uniquement si aucun déclencheur ne correspond; sert au cadrage et au routage.
-- Scoring automatique: jamais déclenché par l’utilisateur; uniquement par automation (webhook/cron) avec sortie JSON stricte.
+- [AUTO] Scoring & évaluation d’une Epic: jamais déclenché par l’utilisateur; uniquement par automation (webhook/cron) avec sortie JSON stricte.
 - Anti‑chevauchement:
   - Conformité/Ready → traités dans Évaluer/Améliorer; ne pas créer un scénario séparé.
   - Tendances/duplications → lenses dans Portefeuille; pour un seul Epic, utiliser Améliorer.

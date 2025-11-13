@@ -1,4 +1,4 @@
-## Scénario — Scoring automatique d’une Epic (automation‑only)
+## Scénario — [AUTO] Scoring & évaluation d’une Epic (automation‑only)
 
 ## Déclenchement
 Activer uniquement via l’intent d’automation: `rovo:automation:epic_score_v1`.

@@ -33,12 +33,12 @@ Scénarios actifs (alignés sur le dossier « Epic Studio »)
   - Entrées: `issue.key`/URL; dates & statut, enfants, liens/dépendances; changelog (dernière activité, transitions), `Created`/`Resolution date`.
   - Sorties: insight (≤120 mots) + 3–5 actions; étiquette d’état; commentaire prêt à publier.
   - Skills: `COMMENT_WORK_ITEM`.
-- Analyse automatique de l’avancement d’une Epic (automation‑only)
+– [AUTO] Analyser avancement Epic (automation‑only)
   - Intent requis: `rovo:automation:epic_progress_v1`.
   - Entrées: `key` ou `url` (+ `stalled_days_threshold`, `weights`).
   - Sortie: JSON strict (`schedule`/`execution`/`dependencies`, `time_in_status_days`, `flagged`, `confidence`, `progress_score`, `changelog_summary`).
   - Skills: `NO_SKILLS`.
-- Scoring automatique d’une Epic (automation‑only)
+– [AUTO] Scoring & évaluation d’une Epic (automation‑only)
   - Intent requis: `rovo:automation:epic_score_v1`.
   - Entrées: `key` ou `url`, score précédent éventuel.
   - Sortie: JSON strict (score, insights, recommandations).
